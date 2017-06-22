@@ -1,7 +1,7 @@
-<h1>{{heroe.nombre}}<small>{{heroe.aparicion}}</small></h1>
+<h1 class="animated fadeIn">{{heroe.nombre}}<small>{{heroe.aparicion}}</small></h1>
 <hr>
 
-<div class="row">
+<div class="row animated fadeIn fast">
   <div class="col-md-4">
       <img [src]="heroe.img" class="img-fluid" [alt]="heroe.nombre">
       <br><br>
@@ -14,8 +14,8 @@
         {{heroe.bio}}
       </p>
       <div >
-          <img src="assets/img/DC_Comics_logo.png" [alt]="heroe.casa" *ngIf="heroe.casa=='DC'">
-          <img src="assets/img/Marvel-Logo.png" [alt]="heroe.casa" *ngIf="heroe.casa=='Marvel'">
+          <img class="img-logo" src="assets/img/DC_Comics_logo.png" [alt]="heroe.casa" *ngIf="heroe.casa=='DC'">
+          <img class="img-logo" src="assets/img/Marvel-Logo.png" [alt]="heroe.casa" *ngIf="heroe.casa=='Marvel'">
       </div>
   </div>
 </div>
