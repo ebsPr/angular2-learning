@@ -1,9 +1,11 @@
-<h1 class="animated fadeIn fast">Héroes
+<h1 class="animated fadeIn fast" >Héroes
     <small>Marvel y DC</small>
   </h1>
   <hr>
-  <div class="card-columns ">
-
+  <div class="alert alert-warning" role="alert" *ngIf="!resultadoHeroes()">
+      No hay resultados
+    </div>
+  <div class="card-columns " *ngIf="resultadoHeroes()">
     <div class="card animated fadeIn" *ngFor="let heroe of heroes;let i = index">
       <img class="card-img-top"  [src]="heroe.img" alt="{{heroe.nombre}}">
       <div class="card-body">

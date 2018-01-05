@@ -20,4 +20,8 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  resultadoHeroes() {
+    return this.heroes.length > 0;
+  }
+
 }
