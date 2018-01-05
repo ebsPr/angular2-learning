@@ -57,12 +57,16 @@ export class HeroesService {
     console.log('servicio listo para usarse');
   }
 
-  getHeroes():Heroe[]{
+  getHeroes(): Heroe[] {
     return this.heroes;
+  }
+
+  getHeroe(i: number): Heroe {
+    return this.heroes[i];
   }
 }
 
-export interface Heroe{
+export interface Heroe {
   nombre: string;
   bio: string;
   img: string;
