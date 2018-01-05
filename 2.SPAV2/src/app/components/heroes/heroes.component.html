@@ -12,8 +12,8 @@
       <p class="card-text">
         <small class="text-muted">{{heroe.aparicion}}</small>
       </p>
-      <!-- <button type="button" class="btn btn-dark btn-block"> Ver más</button> -->
-      <a [routerLink]="['/heroe',i]" class="btn btn-dark btn-block"> Ver más...</a>
+      <button type="button" class="btn btn-dark btn-block" (click)="verHeroe(i)"> Ver más</button>
+      <!-- <a [routerLink]="['/heroe',i]" class="btn btn-dark btcn-block"> Ver más...</a> -->
     </div>
   </div>
 </div>
