@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
+import { routedComponents } from "./app.route";
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routedComponents
   ],
   providers: [],
   bootstrap: [AppComponent]
