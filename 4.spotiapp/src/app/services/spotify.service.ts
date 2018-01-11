@@ -14,7 +14,7 @@ export class SpotifyService {
    getArtistas(termino:string){
       let url = `https://api.spotify.com/v1/search?query=${termino}&type=artist&limit=20`
       let headers = new HttpHeaders({
-        'Authorization': 'Bearer BQCCjmn_lCl09McH-1bVc3pEvcaVeszZDsxp65-UGGaa0srEDfAYKmaJ-SJ1YJcdM8PQkGSht3SaGcsHymY'
+        'Authorization': 'Bearer BQAISi3sbsAI1gsJZk1XGD-sEbXX3H-pU4o-nCvlz-q8JAs5XrtaJj3hkY0NWuwZYMb72C6x9Ltku7edQ1M'
       });
 
       // es6 el {headers:headers} se puede poner como {headers}
