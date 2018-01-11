@@ -7,21 +7,41 @@ export class SpotifyService {
 
   artistas:any[] = [];
 
+  urlSpotify:string = 'https://api.spotify.com/v1/';
+  authorization:string = 'BQDS8U3VF6pCnU1QLW2N8B6ah90qYAhOOZVppksaXSx6cPFwZljuMyr4_mqbxH8Sp7BIrYk4vbNZfC7wCv4';
+  
+
   constructor(public _http : HttpClient) {
     console.log('Servicio spotify listo')
    }
 
-   getArtistas(termino:string){
-      let url = `https://api.spotify.com/v1/search?query=${termino}&type=artist&limit=20`
-      let headers = new HttpHeaders({
-        'Authorization': 'Bearer BQAISi3sbsAI1gsJZk1XGD-sEbXX3H-pU4o-nCvlz-q8JAs5XrtaJj3hkY0NWuwZYMb72C6x9Ltku7edQ1M'
-      });
+   private getHeaders():HttpHeaders {
+        return new HttpHeaders({'Authorization': `Bearer ${this.authorization}`});
+   }
 
-      // es6 el {headers:headers} se puede poner como {headers}
-      return this._http.get(url,{headers:headers})
+   getArtista(id: string){
+     let url = `${this.urlSpotify}artists/${id}`;
+
+     return this._http.get(url,{headers: this.getHeaders()});
+
+   }
+   getArtistas(termino:string){
+      let url = `${this.urlSpotify}search?query=${termino}&type=artist&limit=20`
+
+    
+      return this._http.get(url,{headers:this.getHeaders()})
       .map( (response:any) => {
         this.artistas = response.artists.items;
         return this.artistas;
+      });
+   }
+
+   getTop(id:string){
+      let url = `${this.urlSpotify}artists/${id}/top-tracks?country=ES`  
+
+      return this._http.get(url,{headers:this.getHeaders()})
+      .map( (response:any) => {
+        return response.tracks;
       });
    }
 }
