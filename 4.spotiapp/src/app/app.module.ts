@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -9,6 +10,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 import { routedComponents } from "./app.route";
 
+import { SpotifyService } from "./services/spotify.service";
 
 @NgModule({
   declarations: [
@@ -19,9 +21,12 @@ import { routedComponents } from "./app.route";
   ],
   imports: [
     BrowserModule,
-    routedComponents
+    routedComponents,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    SpotifyService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
