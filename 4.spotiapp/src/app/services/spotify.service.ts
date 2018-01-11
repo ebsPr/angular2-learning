@@ -11,8 +11,8 @@ export class SpotifyService {
     console.log('Servicio spotify listo')
    }
 
-   getArtistas(){
-      let url = 'https://api.spotify.com/v1/search?query=metalica&type=artist&limit=20'
+   getArtistas(termino:string){
+      let url = `https://api.spotify.com/v1/search?query=${termino}&type=artist&limit=20`
       let headers = new HttpHeaders({
         'Authorization': 'Bearer BQCCjmn_lCl09McH-1bVc3pEvcaVeszZDsxp65-UGGaa0srEDfAYKmaJ-SJ1YJcdM8PQkGSht3SaGcsHymY'
       });
