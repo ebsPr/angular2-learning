@@ -8,9 +8,16 @@ hr{
   border-color: white;
 }
 
+.img-circular{
+  border-radius: 100%
+}
 .top30{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.top60{
+  margin-top: 60px;
 }
 
 .jumbotron{

@@ -11,9 +11,15 @@ import 'rxjs/add/operator/map'
 export class ArtistComponent implements OnInit {
 
   artista:any = {};
+  top:any[] = [];
 
   constructor(private _activatedRoute: ActivatedRoute, private _spotifyService: SpotifyService ) { }
 
+  getImg(){
+    if(this.artista.images && this.artista.images.length > 0){
+      return this.artista.images[1];
+    }
+  }
   ngOnInit() {
     this._activatedRoute.params
     .map( params => params['id'])
@@ -27,7 +33,10 @@ export class ArtistComponent implements OnInit {
           });
 
           // obtenemos las canciones top del artista
-          this._spotifyService.getTop(id).subscribe( top => console.log( top));
+          this._spotifyService.getTop(id).subscribe( top => {
+            console.log( top)
+            this.top = top;
+          });
       });
   }
 

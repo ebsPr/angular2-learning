@@ -1,3 +1,39 @@
-<p>
-  {{artista.name}}
-</p>
+<div class="container top30">
+  <div class="row">
+      <div class="col-md-4">
+          <img [src]="artista.images | sinfoto" class="d-inline-block align-top img-thumbmail img-circular">
+      </div>
+      <div class="col-md-8 " >
+        <h1>{{artista.name}}</h1>
+        <hr>
+        <div class="text-right">
+            <button [routerLink]="['/search']" class="btn btn-light"  >Atrás</button>
+            <a class="btn btn-success" [href]="artista.external_urls?.spotify" target="_blank">Abrir Spotify</a>
+        </div>
+      </div>
+  </div>
+  <div class="row top60">
+      <h3>Top Tracks</h3>
+      <hr>
+      <table class="table">
+          <tbody>
+            <tr *ngFor="let track of top">
+              <th scope="row">
+                  <img [src]="track.album.images[2].url" class="img-thumbnail">
+              </th>
+              <td>{{track.name}}</td>
+              <td>
+                <!--
+                <audio controls>
+                  <source [src]="track.preview_url">
+                    Tu navegador no es compatible con el reproductor
+                </audio>
+              -->
+              <iframe [src]="track.uri | domseguro:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+  </div>
+</div>  

@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ArtistComponent } from './components/artist/artist.component';
 
 import { routedComponents } from "./app.route";
 
 import { SpotifyService } from "./services/spotify.service";
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
-import { ArtistComponent } from './components/artist/artist.component';
+import { DomSeguroPipe } from "./pipes/domseguro.pipe";
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ArtistComponent } from './components/artist/artist.component';
     SearchComponent,
     NavbarComponent,
     SinfotoPipe,
-    ArtistComponent
+    ArtistComponent,
+    DomSeguroPipe
   ],
   imports: [
     BrowserModule,

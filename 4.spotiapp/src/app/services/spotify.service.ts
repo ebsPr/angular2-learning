@@ -8,7 +8,7 @@ export class SpotifyService {
   artistas:any[] = [];
 
   urlSpotify:string = 'https://api.spotify.com/v1/';
-  authorization:string = 'BQDS8U3VF6pCnU1QLW2N8B6ah90qYAhOOZVppksaXSx6cPFwZljuMyr4_mqbxH8Sp7BIrYk4vbNZfC7wCv4';
+  authorization:string = 'BQDgEuV3AS2NUCOmqz2mJOf5-lZh1n89-YWf0Vc9rpXBLoa4G48N7s2aXAmaZIytMIGFCCU0HMffqBJDFiE';
   
 
   constructor(public _http : HttpClient) {
