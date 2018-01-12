@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Lista de pendientes</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h1>Pendientes</h1>
+    <ul>
+      <li *ngFor="let lista of _listaDeseosService.listas">
+        {{lista.nombre}}
+      </li>
+      
+    </ul>
+  </ion-content>
+  
